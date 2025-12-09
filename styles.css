@@ -19,15 +19,14 @@
   --img-margin-bottom: 0.6rem;
 }
 @font-face {
-  font-family: "obviously";
-  src: url("./assets/fonts/ObviouslyDemo-Regular.otf");
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Regular.ttf");
 }
-
 body {
   min-width: 350px;
 }
 html {
-  font-family: "obviously", Arial, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
 }
 h1,
 h2,
@@ -58,9 +57,6 @@ img {
   margin-bottom: var(--img-margin-bottom);
 }
 /*shared classes*/
-.m-auto {
-  margin: auto;
-}
 .bgr-main {
   background-color: var(--background-color-main);
 }
@@ -91,47 +87,58 @@ button:hover {
   background-color: black;
   cursor: pointer;
 }
-
 /*end shared classes*/
-header nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: var(--nav-gap);
-  align-items: center;
-  border-bottom: 1px solid black;
 
-  margin: auto;
-  padding: var(--nav-padding) 0;
-  max-width: var(--max-page-width);
-}
-header nav ul {
-  list-style: none;
+/*header*/
+header nav {
   display: flex;
-  gap: var(--nav-gap);
-  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--nav-padding) 0;
+  border-bottom: 1px solid black;
 }
 header a {
   text-decoration: none;
   color: var(--nav-text-color);
 }
-header nav .logo {
-  white-space: nowrap;
-  font-size: clamp(1.5rem, 5vw, 2rem);
-}
-header nav .shopping-ico img {
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  vertical-align: middle;
-}
-header nav .shopping-ico {
-  text-align: end;
-}
 header nav .mobile-menu {
-  width: 30px;
-  height: 30px;
   display: none;
 }
+header nav .logo {
+  font-size: clamp(1.2rem, 5vw, 1.8rem);
+  width: 220px;
+  white-space: nowrap;
+}
+header nav img {
+  border: 0;
+  all: unset;
+  width: 30px;
+  height: 30px;
+}
+header nav .desktop-menu {
+  flex: 1;
+}
+header nav div {
+  width: 220px;
+  margin-left: auto;
+  display: flex;
+  justify-content: end;
+}
+header nav a {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  display: flex;
+  gap: var(--nav-gap);
+  margin: auto;
+}
+
 /*hero*/
 section.hero .hero-wrapper {
   margin: auto;
@@ -184,9 +191,20 @@ section.offer .offer-wrapper .offer-main-img {
   max-width: 100%;
   max-height: 900px;
 }
-section.offer .offer-product img {
+section.offer ul {
+  list-style: none;
+}
+section.offer ul li a {
+  text-decoration: none;
+  color: black;
+}
+section.offer ul img {
   max-height: 600px;
   width: 100%;
+  transition: 0.3s;
+}
+section.offer ul img:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 /*end offer section*/
 /*section shop*/
@@ -223,6 +241,7 @@ section.shop .content-wrapper > div {
 section.shop .content-wrapper img {
   width: 100%;
   display: block;
+  transition: 0.3s;
 }
 /*end section shop*/
 /*section review*/
@@ -338,29 +357,23 @@ footer .input-wrapper {
 footer .input-wrapper input {
   padding: 1rem 2rem;
 }
+
+/*media*/
 @media (max-width: 800px) {
-  .logo {
-    grid-column: 2;
-    grid-row: 1;
-  }
-  .mobile-menu {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .menu {
-    display: none;
-    grid-row: 1;
-  }
-  .item3 {
-    grid-column: 3;
-    grid-row: 1;
+  header nav .mobile-menu {
+    display: block;
   }
   header nav .desktop-menu {
     display: none;
   }
-
-  header nav .mobile-menu {
-    display: inline-block;
+  header nav .logo {
+    font-size: 1.5rem;
+    flex: 1;
+    text-align: center;
+    width: 100%;
+  }
+  header nav div {
+    width: 40px;
   }
   section.hero .hero-wrapper img {
     max-height: 400px;
@@ -374,10 +387,6 @@ footer .input-wrapper input {
 
   section.offer .offer-wrapper {
     flex-direction: column;
-  }
-  section.offer .offer-product {
-    max-width: 80%;
-    margin-left: auto;
   }
 
   section.offer .offer-wrapper .offer-main-img {
@@ -395,6 +404,9 @@ footer .input-wrapper input {
   }
   section.shop .content-wrapper ul {
     flex-direction: column;
+  }
+  section.shop .content-wrapper ul li {
+    margin-bottom: 3rem;
   }
   section.review .content-wrapper {
     grid-template-columns: 1fr;

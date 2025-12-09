@@ -5,24 +5,37 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Baigiamasis Darbas</title>
     <link rel="stylesheet" href="./styles.css" />
+    <style>
+      nav {
+        display: flex;
+        align-items: center;
+      }
+      nav img {
+        border: 0;
+        all: unset;
+        width: 30px;
+        height: 30px;
+      }
+    </style>
   </head>
 
   <body>
     <header class="bgr-main">
       <div class="header-wrapper">
         <nav>
-          <h2 class="logo">Wesley Pets</h2>
           <img
             class="mobile-menu"
             src="./assets/images/menu-ico.svg"
             alt="Menu"
           />
+          <span class="logo">Wesley Pets</span>
+
           <ul class="desktop-menu">
             <li><a href="#">Shop</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
-          <div class="shopping-ico">
+          <div>
             <a href="#"
               ><img
                 src="./assets/images/shopping-cart-ico.svg"
@@ -54,7 +67,7 @@
                 Maybe you want to turn a hobby into something more. Or maybe you
                 have a creative project to share with the world.
               </p>
-              <button class="btn">Learn more</button>
+              <button>Learn more</button>
             </div>
           </div>
         </div>
@@ -67,14 +80,20 @@
               src="./assets/images/offer.jpeg"
               alt="Offer"
             />
-            <div class="offer-product">
-              <img
-                src="./assets/images/collars-offer.webp"
-                alt="Two Tails - Cactus Leather Collar & ID Tag Bundle"
-              />
-              <h4>Two Tails - Cactus Leather Collar & ID Tag Bundle</h4>
-              <p>$25.00</p></a>
-            </div>
+            <ul>
+              <li>
+                <a href="#">
+                  <a href="#">
+                    <img
+                      src="./assets/images/collars-offer.webp"
+                      alt="Two Tails - Cactus Leather Collar & ID Tag Bundle"
+                    />
+                    <h4>Two Tails - Cactus Leather Collar & ID Tag Bundle</h4>
+                    <p>$25.00</p>
+                  </a></a
+                >
+              </li>
+            </ul>
           </div>
         </div>
       </section>
