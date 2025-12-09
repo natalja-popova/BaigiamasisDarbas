@@ -7,12 +7,16 @@
   --nav-gap: 2rem;
   --nav-text-color: black;
   --max-page-width: 1600px;
-  --section-paddingY: clamp(2.3rem, 7vw, 8rem);
+  --section-paddingY: clamp(2rem, 6vw, 7rem);
   --section-paddingX: clamp(2rem, 5vw, 3rem);
   --background-color-main: #f5f5dc;
   --background-color-shop: #f1e5dc;
   --elements-border-radius: 30px;
-  --elements-gap: clamp(2rem, 6vw, 4rem);
+  --elements-gap: 2rem;
+  --header-height: clamp (4rem, 6vw, 6rem);
+  --nav-padding: clamp(1.5rem, 6vw, 2.5rem);
+  --hero-padding-top: 2rem;
+  --img-margin-bottom: 0.6rem;
 }
 @font-face {
   font-family: "obviously";
@@ -33,9 +37,10 @@ h2,
 h3,
 h4 {
   font-weight: normal;
+  line-height: 1.2;
 }
 h1 {
-  margin-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 h2 {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
@@ -53,6 +58,7 @@ img {
   object-fit: cover;
   object-position: center;
   border-radius: var(--elements-border-radius);
+  margin-bottom: var(--img-margin-bottom);
 }
 /*shared classes*/
 .m-auto {
@@ -96,15 +102,16 @@ header nav {
   gap: var(--nav-gap);
   align-items: center;
   border-bottom: 1px solid black;
-  height: 100px;
+
   margin: auto;
-  padding: 2rem 0;
+  padding: var(--nav-padding) 0;
   max-width: var(--max-page-width);
 }
 header nav ul {
   list-style: none;
   display: flex;
   gap: var(--nav-gap);
+  margin: auto;
 }
 header a {
   text-decoration: none;
@@ -132,12 +139,16 @@ header nav .mobile-menu {
 section.hero .hero-wrapper {
   margin: auto;
 }
+section.hero .section-wrapper {
+  padding-top: var(--hero-padding-top);
+}
 section.hero .hero-wrapper h1 {
   text-align: center;
-  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-size: clamp(3rem, 6vw, 7.2rem);
 }
 section.hero .hero-wrapper img {
   width: 100%;
+  max-height: 900px;
 }
 /*end hero*/
 /*start welcome section*/
@@ -162,6 +173,9 @@ section.welcome .welcome-wrapper button {
 }
 /*end welcome section*/
 /*star offer section*/
+section.offer {
+  min-height: 500px;
+}
 section.offer .offer-wrapper {
   display: flex;
   justify-content: space-evenly;
@@ -230,10 +244,13 @@ section.review .content-wrapper {
   grid-template-columns: 1fr 1fr;
   gap: var(--elements-gap);
 }
+section.review .content-wrapper p.review-heading-mobile {
+  display: none;
+}
 section.review .content-wrapper img {
   width: 100%;
   height: 100%;
-  max-height: 800px;
+  max-height: 700px;
 }
 section.review .section-wrapper .text-wrapper {
   display: flex;
@@ -305,6 +322,7 @@ footer .input-wrapper {
   gap: 1rem;
   padding-top: 1rem;
   align-self: end;
+  flex-wrap: wrap;
 }
 footer .input-wrapper input {
   padding: 1rem 2rem;
@@ -333,9 +351,16 @@ footer .input-wrapper input {
   header nav .mobile-menu {
     display: inline-block;
   }
+  section.hero .hero-wrapper img {
+    max-height: 400px;
+  }
+  section.welcome .welcome-wrapper h2 {
+    width: 100%;
+  }
   section.welcome .welcome-wrapper {
     grid-template-columns: 1fr;
   }
+
   section.offer .offer-wrapper {
     flex-direction: column;
   }
@@ -359,6 +384,15 @@ footer .input-wrapper input {
   section.review .content-wrapper {
     grid-template-columns: 1fr;
   }
+  section.review .content-wrapper p.review-heading-mobile {
+    display: block;
+  }
+  section.review .content-wrapper .text-wrapper p.review-heading-desktop {
+    display: none;
+  }
+  section.review .content-wrapper img {
+    max-height: 500px;
+  }
   section.instagram .section-wrapper .images-wrapper {
     grid-template-columns: 1fr 1fr;
   }
@@ -367,6 +401,7 @@ footer .input-wrapper input {
     justify-content: space-between;
     gap: 2rem;
     flex-direction: row;
+    align-items: center;
   }
   footer .footer-content-wrapper {
     grid-template-columns: 1fr;
