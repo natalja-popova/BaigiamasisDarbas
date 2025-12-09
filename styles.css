@@ -194,6 +194,21 @@ section.shop .content-wrapper {
   display: flex;
   gap: var(--elements-gap);
 }
+section.shop .content-wrapper ul {
+  display: flex;
+  gap: var(--elements-gap);
+  list-style: none;
+}
+section.shop .content-wrapper ul li {
+  flex: 1;
+}
+section.shop .content-wrapper ul li a {
+  text-decoration: none;
+  color: black;
+}
+section.shop .content-wrapper ul li img:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
 section.shop .content-wrapper .text-wrapper {
   display: flex;
   flex-direction: column;
@@ -207,6 +222,7 @@ section.shop .content-wrapper > div {
 }
 section.shop .content-wrapper img {
   width: 100%;
+  display: block;
 }
 /*end section shop*/
 /*section review*/
@@ -363,6 +379,7 @@ footer .input-wrapper input {
     max-width: 80%;
     margin-left: auto;
   }
+
   section.offer .offer-wrapper .offer-main-img {
     width: 80%;
     max-height: 500px;
@@ -371,10 +388,13 @@ footer .input-wrapper input {
   section.shop .content-wrapper {
     flex-direction: column;
   }
-  section.shop .content-wrapper > div img {
+  section.shop .content-wrapper ul img {
     width: 100%;
     max-height: initial;
     max-width: initial;
+  }
+  section.shop .content-wrapper ul {
+    flex-direction: column;
   }
   section.review .content-wrapper {
     grid-template-columns: 1fr;
