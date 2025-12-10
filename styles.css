@@ -331,14 +331,11 @@ footer .footer-content-wrapper nav ul {
 footer .footer-content-wrapper nav ul li a {
   color: black;
 }
-footer h2 {
+footer h2.logo {
   font-size: 2rem;
   padding-bottom: 2rem;
 }
-footer nav .logo {
-  font-size: 2rem;
-  display: block;
-}
+
 footer .social-ico {
   display: flex;
   gap: var(--elements-gap);
@@ -454,5 +451,8 @@ footer .input-wrapper input {
   footer .footer-content-wrapper {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+  footer h2.logo {
+    padding-bottom: 0rem;
   }
 }
